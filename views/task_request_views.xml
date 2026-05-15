@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="task_request_list_view" model="ir.ui.view">
+        <field name="name">task.request.list.view</field>
+        <field name="model">task.request</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="user_id" string="Name"/>
+                <field name="task_id" string="Task"/>
+                <field name="assignee_ids" string="Assignees" widget="many2many_tags"/>
+                <button name="action_assign_task" type="object" string="Assign" icon="fa-check"/>
+                <button type="object" string="Cancel" icon="fa-times"/>
+            </list>
+        </field>
+    </record>
+</odoo>

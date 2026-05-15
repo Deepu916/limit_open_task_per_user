@@ -6,7 +6,10 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='category_id']" position="after">
-                <field name="open_task_limit" string="Task Limit" invisible="not user_ids"/>
+                <field name="open_task_limit"
+                       string="Task Limit"
+                       groups="base.group_system"
+                       invisible="not user_ids"/>
             </xpath>
         </field>
     </record>

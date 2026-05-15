@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="project_task_form_view" model="ir.ui.view">
+        <field name="name">Project task form view</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='stage_id']" position="before">
+                <button name="action_request"
+                        type="object"
+                        class="btn-primary"
+                        string="Request for Task assign"
+                        groups="limit_open_task_per_user.task_assign_user_group"
+                        />
+            </xpath>
+            <xpath expr="//button[@name='action_dependent_tasks']" position="before">
+                <div class="oe_button_box" name="button_box">
+                        <button type="object"
+                                name="action_task_request_smart_button"
+                                string="Task Assigning Requests"
+                                class="oe_stat_button"
+                                icon="fa-list"
+                                groups="base.group_system"/>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

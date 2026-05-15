@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="wizard_form_view" model="ir.ui.view">
+        <field name="name">wizard.form.view</field>
+        <field name="model">project.task.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="task_id" string="Task" readonly="True"/>
+                        <field name="assignee_ids" string="Assignees" widget="many2many_tags"/>
+                        <field name="user_id" string="Requesting User" readonly="True"/>
+                    </group>
+
+                    <footer>
+                        <button name="action_send" type="object" string="Send" class="btn-primary"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -20,6 +20,7 @@
                                 string="Task Assigning Requests"
                                 class="oe_stat_button"
                                 icon="fa-list"
+                                invisible="not task_request"
                                 groups="base.group_system"/>
                     </div>
             </xpath>

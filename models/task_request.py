@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+"""Task Request Model"""
+from odoo import  fields, models
 
 
 class TaskRequest(models.Model):
+    """Task request model"""
     _name = 'task.request'
     _description = 'Task Request'
 
@@ -11,6 +13,7 @@ class TaskRequest(models.Model):
     assignee_ids = fields.Many2many('res.users', string='Assignees')
 
     def action_assign_task(self):
+        """Assign task to assignee"""
         assignee_ids = self.assignee_ids
         for ids in assignee_ids:
             print(ids)
